@@ -5,7 +5,7 @@ if (isset($argv[1])) {
     preg_match('/(net\/)(.*?)(\/)/i',  $argv[1], $kanal);
     mkdir($kanal[2]."-".$fadennummer[2]);
     chdir($kanal[2]."-".$fadennummer[2]);
-       preg_match_all ('/(files\/)(.*?)(\')/i',  $quellenkodierung, $datenfeldzwischenspeicher);
+    preg_match_all ('/(files\/)(.*?)(\')/i',  $quellenkodierung, $datenfeldzwischenspeicher);
     echo "Werde Bernd ".count($datenfeldzwischenspeicher[2])." Bilder laden\n";
     for ($i=0;$i<count($datenfeldzwischenspeicher[2]);$i++) {
         file_put_contents($datenfeldzwischenspeicher[2][$i],file_get_contents("http://krautchan.net/files/".$datenfeldzwischenspeicher[2][$i]));
